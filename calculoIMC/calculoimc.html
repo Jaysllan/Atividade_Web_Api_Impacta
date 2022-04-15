@@ -1,0 +1,54 @@
+<!Doctype html>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+        function calcular(){
+
+    		var formulario = document.getElementById("formulario");	
+	
+    		var peso  		= +formulario.peso.value;
+    		var altura 		= +formulario.altura.value;
+    		var imc = peso / (altura * altura);
+    		
+    		formulario.imc.value = imc.toFixed(2);
+    		
+    		if(imc < 18.5)
+    		{
+    			alert('Magreza');
+    		} 
+    		else if(imc > 18.5 && imc <= 24.9)
+    		{
+    			alert("Normal");
+    		}
+    		else if(imc > 24.9 && imc <= 30)
+    		{
+    			alert("Sobrepeso");
+    		}
+    		else if(imc > 30)
+    		{
+    			alert("Obesidade");
+    		}
+    	}
+    </script>
+</head>
+<body>
+    <form id="formulario">
+    <fieldset>
+    	<legend>Calculo IMC</legend>
+    	
+        <label for="peso">Peso:</label>
+        <input name="peso" type="text" />
+
+		<label for="altura">Altura:</label>
+        <input name="altura" type="text" />
+    
+        <label for="imc">imc:</label>
+        <input name="imc" type="text" disabled="disabled" />
+            
+        <a href="#" onclick="calcular();">Calcular</a>
+    </fieldset>
+    </form>
+</body>
+</html>
